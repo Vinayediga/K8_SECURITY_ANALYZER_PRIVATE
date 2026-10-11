@@ -7,9 +7,9 @@ credentials.json
 __pycache__/
 .venv/
 config/credentials.json
-Include/
-Lib/
-Scripts/
+/Include/
+/Lib/
+/Scripts/
 pyvenv.cfg
 .pytest_cache/
 frontend/node_modules/
