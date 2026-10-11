@@ -1,0 +1,1539 @@
+{
+  "nodes": [
+    {
+      "id": "node:k8s-security-lab-control-plane",
+      "type": "Node",
+      "label": "k8s-security-lab-control-plane",
+      "risk_score": 9.0,
+      "is_source": false,
+      "is_sink": true,
+      "cves": [],
+      "control_plane": true
+    },
+    {
+      "id": "node:unscheduled",
+      "type": "Node",
+      "label": "unscheduled (synthetic)",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": []
+    },
+    {
+      "id": "ns:default",
+      "type": "Namespace",
+      "label": "default",
+      "risk_score": 4.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "findings": [
+        {
+          "id": "K8S-NO-NETWORK-POLICY",
+          "title": "No NetworkPolicy Defined",
+          "severity": "medium",
+          "description": "No NetworkPolicy is defined for this namespace. Kubernetes therefore permits unrestricted pod network communication by default.",
+          "recommendation": "Define appropriate ingress and egress NetworkPolicies using least-privilege network access."
+        }
+      ],
+      "network_policy_count": 0
+    },
+    {
+      "id": "ns:kube-node-lease",
+      "type": "Namespace",
+      "label": "kube-node-lease",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": []
+    },
+    {
+      "id": "ns:kube-public",
+      "type": "Namespace",
+      "label": "kube-public",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": []
+    },
+    {
+      "id": "ns:kube-system",
+      "type": "Namespace",
+      "label": "kube-system",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": true,
+      "cves": []
+    },
+    {
+      "id": "ns:lab",
+      "type": "Namespace",
+      "label": "lab",
+      "risk_score": 4.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "findings": [
+        {
+          "id": "K8S-NO-NETWORK-POLICY",
+          "title": "No NetworkPolicy Defined",
+          "severity": "medium",
+          "description": "No NetworkPolicy is defined for this namespace. Kubernetes therefore permits unrestricted pod network communication by default.",
+          "recommendation": "Define appropriate ingress and egress NetworkPolicies using least-privilege network access."
+        }
+      ],
+      "network_policy_count": 0
+    },
+    {
+      "id": "ns:local-path-storage",
+      "type": "Namespace",
+      "label": "local-path-storage",
+      "risk_score": 4.0,
+      "is_source": false,
+      "is_sink": true,
+      "cves": [],
+      "findings": [
+        {
+          "id": "K8S-NO-NETWORK-POLICY",
+          "title": "No NetworkPolicy Defined",
+          "severity": "medium",
+          "description": "No NetworkPolicy is defined for this namespace. Kubernetes therefore permits unrestricted pod network communication by default.",
+          "recommendation": "Define appropriate ingress and egress NetworkPolicies using least-privilege network access."
+        }
+      ],
+      "network_policy_count": 0
+    },
+    {
+      "id": "ns:cluster-wide",
+      "type": "Namespace",
+      "label": "cluster-wide (synthetic)",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": true,
+      "cves": []
+    },
+    {
+      "id": "sa:default:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "default"
+    },
+    {
+      "id": "sa:kube-node-lease:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-node-lease"
+    },
+    {
+      "id": "sa:kube-public:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-public"
+    },
+    {
+      "id": "sa:kube-system:attachdetach-controller",
+      "type": "ServiceAccount",
+      "label": "attachdetach-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:bootstrap-signer",
+      "type": "ServiceAccount",
+      "label": "bootstrap-signer",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:certificate-controller",
+      "type": "ServiceAccount",
+      "label": "certificate-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:clusterrole-aggregation-controller",
+      "type": "ServiceAccount",
+      "label": "clusterrole-aggregation-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:coredns",
+      "type": "ServiceAccount",
+      "label": "coredns",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:cronjob-controller",
+      "type": "ServiceAccount",
+      "label": "cronjob-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:daemon-set-controller",
+      "type": "ServiceAccount",
+      "label": "daemon-set-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:deployment-controller",
+      "type": "ServiceAccount",
+      "label": "deployment-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:disruption-controller",
+      "type": "ServiceAccount",
+      "label": "disruption-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:endpoint-controller",
+      "type": "ServiceAccount",
+      "label": "endpoint-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:endpointslice-controller",
+      "type": "ServiceAccount",
+      "label": "endpointslice-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:endpointslicemirroring-controller",
+      "type": "ServiceAccount",
+      "label": "endpointslicemirroring-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:ephemeral-volume-controller",
+      "type": "ServiceAccount",
+      "label": "ephemeral-volume-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:expand-controller",
+      "type": "ServiceAccount",
+      "label": "expand-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:generic-garbage-collector",
+      "type": "ServiceAccount",
+      "label": "generic-garbage-collector",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:horizontal-pod-autoscaler",
+      "type": "ServiceAccount",
+      "label": "horizontal-pod-autoscaler",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:job-controller",
+      "type": "ServiceAccount",
+      "label": "job-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:kindnet",
+      "type": "ServiceAccount",
+      "label": "kindnet",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:kube-proxy",
+      "type": "ServiceAccount",
+      "label": "kube-proxy",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:legacy-service-account-token-cleaner",
+      "type": "ServiceAccount",
+      "label": "legacy-service-account-token-cleaner",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:namespace-controller",
+      "type": "ServiceAccount",
+      "label": "namespace-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:node-controller",
+      "type": "ServiceAccount",
+      "label": "node-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:persistent-volume-binder",
+      "type": "ServiceAccount",
+      "label": "persistent-volume-binder",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:pod-garbage-collector",
+      "type": "ServiceAccount",
+      "label": "pod-garbage-collector",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:pv-protection-controller",
+      "type": "ServiceAccount",
+      "label": "pv-protection-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:pvc-protection-controller",
+      "type": "ServiceAccount",
+      "label": "pvc-protection-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:replicaset-controller",
+      "type": "ServiceAccount",
+      "label": "replicaset-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:replication-controller",
+      "type": "ServiceAccount",
+      "label": "replication-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:resource-claim-controller",
+      "type": "ServiceAccount",
+      "label": "resource-claim-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:resourcequota-controller",
+      "type": "ServiceAccount",
+      "label": "resourcequota-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:root-ca-cert-publisher",
+      "type": "ServiceAccount",
+      "label": "root-ca-cert-publisher",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:service-account-controller",
+      "type": "ServiceAccount",
+      "label": "service-account-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:service-cidrs-controller",
+      "type": "ServiceAccount",
+      "label": "service-cidrs-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:statefulset-controller",
+      "type": "ServiceAccount",
+      "label": "statefulset-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:token-cleaner",
+      "type": "ServiceAccount",
+      "label": "token-cleaner",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:ttl-after-finished-controller",
+      "type": "ServiceAccount",
+      "label": "ttl-after-finished-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:ttl-controller",
+      "type": "ServiceAccount",
+      "label": "ttl-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:validatingadmissionpolicy-status-controller",
+      "type": "ServiceAccount",
+      "label": "validatingadmissionpolicy-status-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:kube-system:volumeattributesclass-protection-controller",
+      "type": "ServiceAccount",
+      "label": "volumeattributesclass-protection-controller",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system"
+    },
+    {
+      "id": "sa:lab:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "lab"
+    },
+    {
+      "id": "sa:lab:overprivileged-sa",
+      "type": "ServiceAccount",
+      "label": "overprivileged-sa",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "lab"
+    },
+    {
+      "id": "sa:local-path-storage:default",
+      "type": "ServiceAccount",
+      "label": "default",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "local-path-storage"
+    },
+    {
+      "id": "sa:local-path-storage:local-path-provisioner-service-account",
+      "type": "ServiceAccount",
+      "label": "local-path-provisioner-service-account",
+      "risk_score": 1.0,
+      "is_source": false,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "local-path-storage"
+    },
+    {
+      "id": "pod:kube-system:coredns-7d764666f9-7q5jm",
+      "type": "Pod",
+      "label": "coredns-7d764666f9-7q5jm",
+      "risk_score": 4.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": false,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": true,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:coredns-7d764666f9-svth5",
+      "type": "Pod",
+      "label": "coredns-7d764666f9-svth5",
+      "risk_score": 4.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": false,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": true,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:etcd-k8s-security-lab-control-plane",
+      "type": "Pod",
+      "label": "etcd-k8s-security-lab-control-plane",
+      "risk_score": 7.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:kindnet-5d7vt",
+      "type": "Pod",
+      "label": "kindnet-5d7vt",
+      "risk_score": 7.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:kube-apiserver-k8s-security-lab-control-plane",
+      "type": "Pod",
+      "label": "kube-apiserver-k8s-security-lab-control-plane",
+      "risk_score": 7.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:kube-controller-manager-k8s-security-lab-control-plane",
+      "type": "Pod",
+      "label": "kube-controller-manager-k8s-security-lab-control-plane",
+      "risk_score": 7.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:kube-proxy-ts7b7",
+      "type": "Pod",
+      "label": "kube-proxy-ts7b7",
+      "risk_score": 9.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": true,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-PRIVILEGED-CONTAINER",
+          "title": "Privileged Container",
+          "severity": "critical",
+          "description": "Container runs with privileged mode enabled, which can significantly increase access to the host.",
+          "recommendation": "Disable privileged mode unless explicitly required."
+        },
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:kube-system:kube-scheduler-k8s-security-lab-control-plane",
+      "type": "Pod",
+      "label": "kube-scheduler-k8s-security-lab-control-plane",
+      "risk_score": 7.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "kube-system",
+      "hostPID": false,
+      "hostNetwork": true,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:lab:attacker-pod",
+      "type": "Pod",
+      "label": "attacker-pod",
+      "risk_score": 9.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "lab",
+      "hostPID": false,
+      "hostNetwork": false,
+      "privileged": true,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-PRIVILEGED-CONTAINER",
+          "title": "Privileged Container",
+          "severity": "critical",
+          "description": "Container runs with privileged mode enabled, which can significantly increase access to the host.",
+          "recommendation": "Disable privileged mode unless explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:lab:second-attacker",
+      "type": "Pod",
+      "label": "second-attacker",
+      "risk_score": 9.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "lab",
+      "hostPID": true,
+      "hostNetwork": true,
+      "privileged": true,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-PRIVILEGED-CONTAINER",
+          "title": "Privileged Container",
+          "severity": "critical",
+          "description": "Container runs with privileged mode enabled, which can significantly increase access to the host.",
+          "recommendation": "Disable privileged mode unless explicitly required."
+        },
+        {
+          "id": "K8S-HOSTPID",
+          "title": "Host PID Namespace",
+          "severity": "high",
+          "description": "Pod shares the host PID namespace and may observe processes running on the Kubernetes node.",
+          "recommendation": "Disable hostPID unless there is a documented requirement."
+        },
+        {
+          "id": "K8S-HOSTNETWORK",
+          "title": "Host Network Enabled",
+          "severity": "high",
+          "description": "Pod uses the host network namespace, increasing its access to node-level networking.",
+          "recommendation": "Disable hostNetwork unless it is explicitly required."
+        },
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:lab:victim",
+      "type": "Pod",
+      "label": "victim",
+      "risk_score": 4.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "lab",
+      "hostPID": false,
+      "hostNetwork": false,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    },
+    {
+      "id": "pod:local-path-storage:local-path-provisioner-67b8995b4b-4vdwv",
+      "type": "Pod",
+      "label": "local-path-provisioner-67b8995b4b-4vdwv",
+      "risk_score": 4.0,
+      "is_source": true,
+      "is_sink": false,
+      "cves": [],
+      "namespace": "local-path-storage",
+      "hostPID": false,
+      "hostNetwork": false,
+      "privileged": false,
+      "allowPrivilegeEscalation": false,
+      "runAsNonRoot": false,
+      "readOnlyRootFilesystem": false,
+      "tokenAutomount": null,
+      "findings": [
+        {
+          "id": "K8S-RUN-AS-ROOT",
+          "title": "Container May Run as Root",
+          "severity": "medium",
+          "description": "The container security context does not require execution as a non-root user.",
+          "recommendation": "Configure runAsNonRoot=true and use a non-root user."
+        },
+        {
+          "id": "K8S-WRITABLE-ROOTFS",
+          "title": "Writable Root Filesystem",
+          "severity": "medium",
+          "description": "The container root filesystem is not configured as read-only.",
+          "recommendation": "Set readOnlyRootFilesystem=true where application compatibility allows."
+        },
+        {
+          "id": "K8S-AUTOMOUNT-SA-TOKEN",
+          "title": "Service Account Token Automatically Mounted",
+          "severity": "medium",
+          "description": "The pod automatically receives a service account token.",
+          "recommendation": "Set automountServiceAccountToken=false unless the workload explicitly requires Kubernetes API access."
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-7q5jm",
+      "target": "sa:kube-system:coredns",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-7q5jm",
+      "target": "sa:kube-system:coredns",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-7q5jm",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-svth5",
+      "target": "sa:kube-system:coredns",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-svth5",
+      "target": "sa:kube-system:coredns",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:coredns-7d764666f9-svth5",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:etcd-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:etcd-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:etcd-k8s-security-lab-control-plane",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kindnet-5d7vt",
+      "target": "sa:kube-system:kindnet",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kindnet-5d7vt",
+      "target": "sa:kube-system:kindnet",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:kindnet-5d7vt",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-apiserver-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-apiserver-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:kube-apiserver-k8s-security-lab-control-plane",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-controller-manager-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-controller-manager-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:kube-controller-manager-k8s-security-lab-control-plane",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-proxy-ts7b7",
+      "target": "sa:kube-system:kube-proxy",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-proxy-ts7b7",
+      "target": "sa:kube-system:kube-proxy",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:kube-proxy-ts7b7",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-proxy-ts7b7",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "CAN_ESCAPE_TO_NODE",
+      "relationship": "CAN_ESCAPE_TO_NODE",
+      "weight": 1.0,
+      "risk": "critical"
+    },
+    {
+      "source": "pod:kube-system:kube-scheduler-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:kube-system:kube-scheduler-k8s-security-lab-control-plane",
+      "target": "sa:kube-system:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:kube-system:kube-scheduler-k8s-security-lab-control-plane",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:attacker-pod",
+      "target": "sa:lab:overprivileged-sa",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:attacker-pod",
+      "target": "sa:lab:overprivileged-sa",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:lab:attacker-pod",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:attacker-pod",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "CAN_ESCAPE_TO_NODE",
+      "relationship": "CAN_ESCAPE_TO_NODE",
+      "weight": 1.0,
+      "risk": "critical"
+    },
+    {
+      "source": "pod:lab:second-attacker",
+      "target": "sa:lab:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:second-attacker",
+      "target": "sa:lab:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:lab:second-attacker",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:second-attacker",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "CAN_ESCAPE_TO_NODE",
+      "relationship": "CAN_ESCAPE_TO_NODE",
+      "weight": 1.0,
+      "risk": "critical"
+    },
+    {
+      "source": "pod:lab:victim",
+      "target": "sa:lab:default",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:lab:victim",
+      "target": "sa:lab:default",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:lab:victim",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:local-path-storage:local-path-provisioner-67b8995b4b-4vdwv",
+      "target": "sa:local-path-storage:local-path-provisioner-service-account",
+      "relation": "RUNS_AS",
+      "relationship": "RUNS_AS",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "pod:local-path-storage:local-path-provisioner-67b8995b4b-4vdwv",
+      "target": "sa:local-path-storage:local-path-provisioner-service-account",
+      "relation": "TOKEN_MOUNTED",
+      "relationship": "TOKEN_MOUNTED",
+      "weight": 5.0,
+      "risk": "medium"
+    },
+    {
+      "source": "pod:local-path-storage:local-path-provisioner-67b8995b4b-4vdwv",
+      "target": "node:k8s-security-lab-control-plane",
+      "relation": "SCHEDULED_ON",
+      "relationship": "SCHEDULED_ON",
+      "weight": 9.0,
+      "risk": "info"
+    },
+    {
+      "source": "sa:kube-system:bootstrap-signer",
+      "target": "ns:kube-system",
+      "relation": "CAN_READ_SECRET",
+      "relationship": "CAN_READ_SECRET",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:token-cleaner",
+      "target": "ns:kube-system",
+      "relation": "CAN_READ_SECRET",
+      "relationship": "CAN_READ_SECRET",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:local-path-storage:local-path-provisioner-service-account",
+      "target": "ns:local-path-storage",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:lab:overprivileged-sa",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_ESCALATE_PRIVILEGE",
+      "relationship": "CAN_ESCALATE_PRIVILEGE",
+      "weight": 1.0,
+      "risk": "critical"
+    },
+    {
+      "source": "sa:kube-system:clusterrole-aggregation-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_ESCALATE_PRIVILEGE",
+      "relationship": "CAN_ESCALATE_PRIVILEGE",
+      "weight": 1.0,
+      "risk": "critical"
+    },
+    {
+      "source": "sa:kube-system:daemon-set-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:job-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:persistent-volume-binder",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:replicaset-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:replication-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:service-account-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_SERVICEACCOUNT",
+      "relationship": "CAN_CREATE_SERVICEACCOUNT",
+      "weight": 3.0,
+      "risk": "high"
+    },
+    {
+      "source": "sa:kube-system:statefulset-controller",
+      "target": "ns:cluster-wide",
+      "relation": "CAN_CREATE_POD",
+      "relationship": "CAN_CREATE_POD",
+      "weight": 3.0,
+      "risk": "high"
+    }
+  ]
+}

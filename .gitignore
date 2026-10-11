@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+credentials.json
+*.py[cod]
+*.zip
+__pycache__/
+.venv/
+config/credentials.json
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+.pytest_cache/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
