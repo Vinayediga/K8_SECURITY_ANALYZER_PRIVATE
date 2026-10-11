@@ -14,9 +14,9 @@ npm run dev          # http://localhost:5173
 ```
 
 In dev, requests to `/api/*` are proxied to `http://127.0.0.1:8000` (see `vite.config.js`), so no CORS
-setup is needed. For a different backend address use `VITE_BACKEND_URL=... npm run dev`.
+setup is needed. For a different backend address, set `VITE_API_URL`.
 For a production build served from another origin, set `VITE_API_URL` (see `.env.example`) and add the
-site's origin to `FRONTEND_ORIGINS` in the backend `.env`.
+site's origin to `FRONTEND_ORIGINS` in the backend environment.
 
 ## Flow
 
