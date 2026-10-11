@@ -2,6 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { api } from "../lib/api.js";
 import { useGraph } from "../context/GraphContext.jsx";
 
+const AGENT_API_URL = (
+  import.meta.env.VITE_API_URL
+  ?? (import.meta.env.PROD ? "https://k8-security-analyzer-private.onrender.com" : "http://127.0.0.1:8000")
+).replace(/\/$/, "");
+
 const card = "rounded-xl border p-5";
 const cardStyle = { background: "var(--surface)", borderColor: "var(--border)" };
 const inputCls = "rounded-lg border px-3 py-2 text-sm outline-none";
@@ -189,7 +194,7 @@ export default function ClustersPane({ onLoaded }) {
             <p className="mt-2 text-sm leading-6" style={{ color: "var(--text-dim)" }}>
               This token is shown only once. You cannot access it again after closing this window. Store it securely on the machine that can reach the cluster.
             </p>
-            <pre className="agent-config mt-5 overflow-x-auto rounded-lg p-4 text-xs" style={{ background: "#0a0d11" }}>{`API_URL=http://127.0.0.1:8000
+            <pre className="agent-config mt-5 overflow-x-auto rounded-lg p-4 text-xs" style={{ background: "#0a0d11" }}>{`API_URL=${AGENT_API_URL}
 AGENT_TOKEN=${agent.agent_token}
 AGENT_CLUSTER_ID=${agent.cluster_id}
 KUBE_CONTEXT=${agent.context_name}`}</pre>
