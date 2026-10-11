@@ -3,7 +3,10 @@
  * JWT access tokens last 15 minutes and there is no refresh endpoint, so a 401
  * clears the token and notifies the app, which sends the user back to login.
  */
-const BASE = (import.meta.env.VITE_API_URL ?? "/api").replace(/\/$/, "");
+const BASE = (
+  import.meta.env.VITE_API_URL
+  ?? (import.meta.env.PROD ? "https://k8-security-analyzer-private.onrender.com" : "/api")
+).replace(/\/$/, "");
 const TOKEN_KEY = "k8s_access_token";
 
 let onUnauthorized = () => {};
