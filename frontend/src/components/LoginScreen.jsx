@@ -8,8 +8,20 @@ export default function LoginScreen({ onLoggedIn, onOffline }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
+  const [googleClientId, setGoogleClientId] = useState("");
   const googleButton = useRef(null);
-  const googleClientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+
+  useEffect(() => {
+    let cancelled = false;
+    api.authConfig()
+      .then(({ google_client_id: clientId }) => {
+        if (!cancelled) setGoogleClientId(clientId || "");
+      })
+      .catch(() => {
+        if (!cancelled) setError("Authentication configuration could not be loaded.");
+      });
+    return () => { cancelled = true; };
+  }, []);
 
   useEffect(() => {
     if (!googleClientId || !googleButton.current) return undefined;
@@ -137,7 +149,7 @@ export default function LoginScreen({ onLoggedIn, onOffline }) {
             <button
               type="button"
               className="google-signin-fallback"
-              onClick={() => setError("Google sign-in is not configured. Add VITE_GOOGLE_CLIENT_ID to the frontend environment and restart the app.")}
+              onClick={() => setError("Google sign-in is not configured on the backend.")}
             >
               <svg className="google-mark" viewBox="0 0 24 24" aria-hidden="true">
                 <path fill="#4285F4" d="M21.35 12.23c0-.72-.06-1.42-.18-2.09H12v3.96h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.26Z" />

@@ -17,6 +17,8 @@ In dev, requests to `/api/*` are proxied to `http://127.0.0.1:8000` (see `vite.c
 setup is needed. For a different backend address, set `VITE_API_URL`.
 For a production build served from another origin, set `VITE_API_URL` (see `.env.example`) and add the
 site's origin to `FRONTEND_ORIGINS` in the backend environment.
+Google sign-in is configured with `GOOGLE_CLIENT_ID` in the backend environment; the frontend loads the
+public client ID from `/auth/config`.
 
 ## Flow
 

@@ -84,6 +84,13 @@ async def database_health_check():
     return {"status": "ok", "database": "connected"}
 
 
+@app.get("/auth/config")
+async def auth_config():
+    return {
+        "google_client_id": settings.GOOGLE_CLIENT_ID or None,
+    }
+
+
 @app.post("/auth/register", status_code=201)
 async def register_user(user: UserCreate):
     email = str(user.email).lower().strip()

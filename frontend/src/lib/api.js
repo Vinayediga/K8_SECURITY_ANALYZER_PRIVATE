@@ -81,6 +81,7 @@ async function request(path, { method = "GET", body, auth = true } = {}) {
 const qs = (params) => new URLSearchParams(params).toString();
 
 export const api = {
+  authConfig: () => request("/auth/config", { auth: false }),
   register: (email, password) => request("/auth/register", { method: "POST", body: { email, password }, auth: false }),
   login: async (email, password) => {
     const data = await request("/auth/login", { method: "POST", body: { email, password }, auth: false });
